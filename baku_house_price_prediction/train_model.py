@@ -10,7 +10,7 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 pd.set_option('future.no_silent_downcasting', True)
 
 # Load data
-df = pd.read_excel('processed_file_new.xlsx')
+df = pd.read_excel('house_dataset.xlsx')
 
 # Cleaning
 df['repair'].replace(r'^\s*$', 'yoxdur', regex=True, inplace=True)
