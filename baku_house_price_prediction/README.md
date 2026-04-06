@@ -130,10 +130,6 @@ These metrics measure how close the predicted prices are to the actual market pr
 
 ![Input Form](images/form.png)
 
-### Example User Input
-
-![User Input](images/input.png)
-
 ### Prediction Result
 
 ![Prediction Result](images/result.png)
@@ -145,7 +141,7 @@ These metrics measure how close the predicted prices are to the actual market pr
 ### 1. Clone the repository
 
 ```
-git clone https://github.com/yourusername/baku-house-price-prediction.git
+git clone https://github.com/Yunis-Allahverdi/baku-house-price-prediction.git
 cd baku-house-price-prediction
 ```
 
@@ -189,6 +185,7 @@ Enter house details and the system will return the predicted price.
 Possible improvements for the project include:
 
 * Improving the user interface design
+* Adding regions in addition to Baku
 * Adding more housing features (floor number, building age, etc.)
 * Deploying the application to cloud platforms such as Render or Railway
 * Implementing input validation and error handling
@@ -199,5 +196,3 @@ Possible improvements for the project include:
 ## Author
 
 **Yunis Allahverdi**
-
-Machine Learning and Robotics Engineering student interested in Artificial Intelligence, Computer Vision, and applied machine learning systems.

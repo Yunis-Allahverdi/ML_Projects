@@ -13,7 +13,7 @@ body{
     padding:0;
 
     /* background image */
-    background: url("C:\Programming Files\Python_Files\Python Tutorials\Flask_house_tst\ML_Projects\baku_house_price_prediction\images\baku_img.jpeg") no-repeat center center fixed;
+    background: url("/static/baku_img.jpeg") no-repeat center center fixed;
     background-size: cover;
 
     display:flex;
@@ -113,10 +113,10 @@ button:hover{
 
 <form method="POST">
 
-<label>Category</label>
+<label>Condition</label>
 <select name="category">
-<option value="1">Yeni</option>
-<option value="0">Kohne</option>
+<option value="1">New</option>
+<option value="0">Old</option>
 </select>
 
 
@@ -124,21 +124,21 @@ button:hover{
 <input type="number" name="area" required>
 
 
-<label>Room Number</label>
+<label>Room</label>
 <input type="number" name="room_number" required>
 
 
-<label>Repair</label>
+<label>Renovated</label>
 <select name="repair">
-<option value="1">Var</option>
-<option value="0">Yoxdur</option>
+<option value="1">Yes</option>
+<option value="0">No</option>
 </select>
 
 
 <label>Title Deed</label>
 <select name="title_deed">
-<option value="1">Var</option>
-<option value="0">Yoxdur</option>
+<option value="1">Have</option>
+<option value="0">Don't have</option>
 </select>
 
 
