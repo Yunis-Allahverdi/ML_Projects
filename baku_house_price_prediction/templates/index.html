@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #dff0d8;
+            border-radius: 8px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>House Price Prediction</h1>
+
+    <form method="POST">
+        <label>Category</label>
+        <select name="category" required>
+            <option value="1">Yeni</option>
+            <option value="0">Kohne</option>
+        </select>
+
+        <label>Area (m²)</label>
+        <input type="number" name="area" required>
+
+        <label>Room Number</label>
+        <input type="number" name="room_number" required>
+
+        <label>Repair</label>
+        <select name="repair" required>
+            <option value="1">Var</option>
+            <option value="0">Yoxdur</option>
+        </select>
+
+        <label>Title Deed</label>
+        <select name="title_deed" required>
+            <option value="1">Var</option>
+            <option value="0">Yoxdur</option>
+        </select>
+
+        <label>Region</label>
+        <select name="region" required>
+            <option value="Absheron">Absheron</option>
+            <option value="Bineqedi">Bineqedi</option>
+            <option value="Nerimanov">Nerimanov</option>
+            <option value="Nesimi">Nesimi</option>
+            <option value="Nizami">Nizami</option>
+            <option value="Sabunchu">Sabunchu</option>
+            <option value="Sebail">Sebail</option>
+            <option value="Suraxani">Suraxani</option>
+            <option value="Xetai">Xetai</option>
+            <option value="Xezer">Xezer</option>
+            <option value="Yasamal">Yasamal</option>
+        </select>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if predicted_price %}
+        <div class="result">
+            Predicted Price: {{ predicted_price }}
+        </div>
+    {% endif %}
+</body>
+</html>
