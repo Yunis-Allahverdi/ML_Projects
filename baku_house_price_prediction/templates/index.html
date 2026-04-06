@@ -1,114 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>House Price Prediction</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 20px;
-            background: #f4f4f4;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baku House Price Estimation</title>
 
-        h1 {
-            text-align: center;
-        }
+<style>
 
-        form {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-        }
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin:0;
+    padding:0;
 
-        label {
-            display: block;
-            margin-top: 12px;
-            font-weight: bold;
-        }
+    /* background image */
+    background: url("C:\Programming Files\Python_Files\Python Tutorials\Flask_house_tst\ML_Projects\baku_house_price_prediction\images\baku_img.jpeg") no-repeat center center fixed;
+    background-size: cover;
 
-        input, select, button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 6px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-        }
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
 
-        button {
-            margin-top: 20px;
-            background: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+/* form container */
+.container{
 
-        button:hover {
-            background: #0056b3;
-        }
+    width:500px;
+    padding:35px;
 
-        .result {
-            margin-top: 20px;
-            padding: 15px;
-            background: #dff0d8;
-            border-radius: 8px;
-            font-size: 20px;
-            text-align: center;
-        }
-    </style>
+    background: rgba(255,255,255,0.92);
+
+    border-radius:12px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* title */
+h1{
+    text-align:center;
+    margin-bottom:25px;
+    color:#1c2c4c;
+}
+
+/* labels */
+label{
+    font-weight:bold;
+    display:block;
+    margin-top:15px;
+}
+
+/* inputs + selects */
+input, select{
+
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+
+    border-radius:6px;
+    border:1px solid #ccc;
+
+    font-size:15px;
+
+    box-sizing:border-box; /* THIS FIXES ALIGNMENT */
+}
+
+/* button */
+button{
+
+    width:100%;
+    padding:14px;
+
+    margin-top:25px;
+
+    background:#1877f2;
+
+    color:white;
+
+    font-size:16px;
+
+    border:none;
+    border-radius:6px;
+
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0f5ec7;
+}
+
+/* prediction result */
+.result{
+
+    margin-top:20px;
+
+    text-align:center;
+
+    font-size:20px;
+
+    color:#1e7e34;
+
+    font-weight:bold;
+}
+
+</style>
 </head>
+
 <body>
-    <h1>House Price Prediction</h1>
 
-    <form method="POST">
-        <label>Category</label>
-        <select name="category" required>
-            <option value="1">Yeni</option>
-            <option value="0">Kohne</option>
-        </select>
+<div class="container">
 
-        <label>Area (m²)</label>
-        <input type="number" name="area" required>
+<h1>Baku House Price Estimation</h1>
 
-        <label>Room Number</label>
-        <input type="number" name="room_number" required>
+<form method="POST">
 
-        <label>Repair</label>
-        <select name="repair" required>
-            <option value="1">Var</option>
-            <option value="0">Yoxdur</option>
-        </select>
+<label>Category</label>
+<select name="category">
+<option value="1">Yeni</option>
+<option value="0">Kohne</option>
+</select>
 
-        <label>Title Deed</label>
-        <select name="title_deed" required>
-            <option value="1">Var</option>
-            <option value="0">Yoxdur</option>
-        </select>
 
-        <label>Region</label>
-        <select name="region" required>
-            <option value="Absheron">Absheron</option>
-            <option value="Bineqedi">Bineqedi</option>
-            <option value="Nerimanov">Nerimanov</option>
-            <option value="Nesimi">Nesimi</option>
-            <option value="Nizami">Nizami</option>
-            <option value="Sabunchu">Sabunchu</option>
-            <option value="Sebail">Sebail</option>
-            <option value="Suraxani">Suraxani</option>
-            <option value="Xetai">Xetai</option>
-            <option value="Xezer">Xezer</option>
-            <option value="Yasamal">Yasamal</option>
-        </select>
+<label>Area (m²)</label>
+<input type="number" name="area" required>
 
-        <button type="submit">Predict Price</button>
-    </form>
 
-    {% if predicted_price %}
-        <div class="result">
-            Predicted Price: {{ predicted_price }}
-        </div>
-    {% endif %}
+<label>Room Number</label>
+<input type="number" name="room_number" required>
+
+
+<label>Repair</label>
+<select name="repair">
+<option value="1">Var</option>
+<option value="0">Yoxdur</option>
+</select>
+
+
+<label>Title Deed</label>
+<select name="title_deed">
+<option value="1">Var</option>
+<option value="0">Yoxdur</option>
+</select>
+
+
+<label>Region</label>
+<select name="region">
+
+<option value="Absheron">Absheron</option>
+<option value="Bineqedi">Bineqedi</option>
+<option value="Nerimanov">Nerimanov</option>
+<option value="Nesimi">Nesimi</option>
+<option value="Nizami">Nizami</option>
+<option value="Sabunchu">Sabunchu</option>
+<option value="Sebail">Sebail</option>
+<option value="Suraxani">Suraxani</option>
+<option value="Xetai">Xetai</option>
+<option value="Xezer">Xezer</option>
+<option value="Yasamal">Yasamal</option>
+
+</select>
+
+
+<button type="submit">Predict Price</button>
+
+</form>
+
+{% if predicted_price %}
+
+<div class="result">
+
+Predicted Price: {{ predicted_price }}
+
+</div>
+
+{% endif %}
+
+</div>
+
 </body>
 </html>
