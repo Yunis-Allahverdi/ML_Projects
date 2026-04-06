@@ -141,8 +141,8 @@ These metrics measure how close the predicted prices are to the actual market pr
 ### 1. Clone the repository
 
 ```
-git clone https://github.com/Yunis-Allahverdi/baku-house-price-prediction.git
-cd baku-house-price-prediction
+git clone https://github.com/Yunis-Allahverdi/ML_Projects.git
+cd baku_house_price_prediction
 ```
 
 ### 2. Install dependencies
